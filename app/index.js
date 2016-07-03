@@ -1,4 +1,5 @@
 require('./style/base.css');
+require('./js/ui/app');
 console.log('sup!');
 
 /**

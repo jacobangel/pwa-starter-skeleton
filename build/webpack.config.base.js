@@ -28,7 +28,8 @@ var reactExternal = {
 module.exports = {
   entry: {
       app: './app/index.js',
-      service: './app/service-workers.js'
+      service: './app/js/workers/service-workers.js'
+      worker: './app/js/workers/workers.js'
   },
   module: {
     loaders: [

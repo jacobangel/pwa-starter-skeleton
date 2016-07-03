@@ -35,17 +35,17 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       { test: /\.css?$/, loaders: [
         'style',
         'css',
         'postcss'
-        ]}
+      ]},
       { test: /\.less?$/, exclude: /node_modules/, loaders: [
         'style',
         'css',
-        'postcss'
-        'less',
+        'postcss',
+        'less'
       ]}
     ],
   },
@@ -55,7 +55,7 @@ module.exports = {
     filename: '[name].js'
   },
   postcss: function () {
-    return [autoprefixer({ browsers: [ 'last 3'] })];
+    return [autoprefixer({ browsers: ['last 3'] })];
   },
   devServer: {
      contentBase: "./dist",
@@ -63,7 +63,6 @@ module.exports = {
      hot: true,
      inline: true
   },
-  { browsers: [] })
   plugins: plugins,
   resolve: {
     extensions: ['', '.js', '.jsx'],

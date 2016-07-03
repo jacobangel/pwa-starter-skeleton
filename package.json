@@ -4,13 +4,14 @@
   "description": "A simple starter skeleton for a PWA playground",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec test/*.js",
+    "webpack": "cross-env webpack",
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec ./**/__test__/*.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js --color -p",
     "build:clean": "cross-env rimraf ./dist/*",
     "start": "cross-env NODE_ENV=development node server",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "npm run lint:eslint -- . ",
-    "lint:css": "echo \"No css lint enabled. U suck dude\"",
+    "lint:css": "echo \"No css lint enabled. U suck dude\""
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "babel-preset-stage-2": "^6.11.0",
     "chai": "^3.5.0",
     "cheerio": "^0.20.0",
+    "cross-env": "^1.0.8",
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
     "eslint": "^2.13.1",
@@ -56,6 +58,8 @@
     "eslint-plugin-react": "^5.2.2",
     "exports-loader": "^0.6.3",
     "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "mocha": "^2.5.3",
     "postcss": "^5.0.21",
     "react": "^15.2.0",

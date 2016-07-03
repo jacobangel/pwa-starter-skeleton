@@ -2,6 +2,7 @@
 
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 var plugins = [
   new webpack.DefinePlugin({
@@ -38,17 +39,19 @@ module.exports = {
       ]}
     ],
   },
+  postcss: function () {
+    return [autoprefixer({ browsers: ['last 3 versions'] })];
+  },
   output: {
     path: path.join(__dirname, "../dist"),
     publicPath: '/dist',
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
   },
-  postcss: function () {
-    return [autoprefixer({ browsers: ['last 3'] })];
-  },
+
   devServer: {
      contentBase: "./dist",
-     noInfo: true, //  --no-info option
+     noInfo: false,//true, //  --no-info option
      hot: true,
      inline: true
   },

@@ -5,7 +5,7 @@ const compression = require('compression');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
 
 // Dev middleware
-const addDevMiddlewares = (app, webpackConfig) => {
+const addDevMiddlewares = (app, options, webpackConfig) => {
   const webpack = require('webpack');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -30,6 +30,10 @@ const addDevMiddlewares = (app, webpackConfig) => {
       res.sendFile(path.join(process.cwd(), pkg.dllPlugin.path, filename));
     });
   }
+  const publicPath = options.publicPath || '/';
+  const outputPath = options.outputPath || path.resolve(process.cwd(), 'dist');
+  app.use(publicPath, express.static(outputPath));
+
 
   app.get('*', (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
@@ -65,7 +69,7 @@ module.exports = (app, options) => {
     addProdMiddlewares(app, options);
   } else {
     const webpackConfig = require('../../build/webpack.config.dev');
-    addDevMiddlewares(app, webpackConfig);
+    addDevMiddlewares(app, options, webpackConfig);
   }
 
   return app;

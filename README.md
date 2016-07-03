@@ -26,5 +26,8 @@ The goal of this is to have a reasonable progressive webapp skeleton. This means
 
 `npm test`
 
+## Customizing
+
+
 ## Help
 TBH, you're really on your own here. If you want a comprehensive, supported starting point, you might try [React Boilerplate](https://github.com/mxstbr/react-boilerplate/)

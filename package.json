@@ -8,7 +8,7 @@
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec ./**/__test__/*.js",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js --color -p",
     "build:clean": "cross-env rimraf ./dist/*",
-    "build:copyStatic": "rsync -r manifest.json favicon.ico app/images ./dist",
+    "build:copyStatic": "rsync -r manifest.json browserconfig.xml favicon.ico app/images ./dist",
     "start": "cross-env NODE_ENV=development node ./src/server",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "npm run lint:eslint -- . ",

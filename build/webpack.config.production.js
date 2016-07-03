@@ -1,4 +1,6 @@
 var config = require('./webpack.config.base.js');
+var webpack = require('webpack');
+
 config.plugins.push(
   new webpack.optimize.UglifyJsPlugin({
     compressor: {

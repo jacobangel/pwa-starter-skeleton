@@ -9,7 +9,7 @@ var plugins = [
   }),
   new webpack.optimize.OccurenceOrderPlugin()
 ];
-
+console.log(path.join(__dirname, "../dist"));
 var reactExternal = {
   root: 'React',
   commonjs2: 'react',
@@ -39,7 +39,7 @@ module.exports = {
     ],
   },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "../dist"),
     publicPath: '/dist',
     filename: '[name].js'
   },

@@ -34,7 +34,6 @@ const addDevMiddlewares = (app, options, webpackConfig) => {
   const outputPath = options.outputPath || path.resolve(process.cwd(), 'dist');
   app.use(publicPath, express.static(outputPath));
 
-
   app.get('*', (req, res) => {
     fs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
       if (err) {

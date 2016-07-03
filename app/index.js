@@ -1,7 +1,11 @@
 require('./style/base.css');
 require('./js/ui/app');
-console.log('sup!');
 
+const React = require('react');
+const { render } = require('react-dom');
+const App = require('./js/ui/app');
+
+render(<App />, document.getElementById('root'));
 /**
  * this really should be included using a loader!
  */

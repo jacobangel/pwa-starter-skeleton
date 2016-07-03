@@ -20,5 +20,42 @@
   "bugs": {
     "url": "https://github.com/jacobangel/pwa-starter-skeleton/issues"
   },
-  "homepage": "https://github.com/jacobangel/pwa-starter-skeleton"
+  "homepage": "https://github.com/jacobangel/pwa-starter-skeleton",
+  "dependencies": {
+    "history": "^3.0.0",
+    "lodash": "^4.13.1",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-redux": "^4.4.5",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "whatwg-fetch": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "chai": "^3.5.0",
+    "cheerio": "^0.20.0",
+    "css-loader": "^0.23.1",
+    "enzyme": "^2.3.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.1",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "exports-loader": "^0.6.3",
+    "file-loader": "^0.9.0",
+    "mocha": "^2.5.3",
+    "postcss": "^5.0.21",
+    "react": "^15.2.0",
+    "react-addons-test-utils": "^15.2.0",
+    "sinon": "^1.17.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
 }

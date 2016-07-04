@@ -4,8 +4,8 @@
  "manifest_version": 2,
  "start_url": "/index.html",
  "display": "standalone",
- "background_color": "#4F4F4F",
- "theme_color": "#2F3BA2",
+ "background_color": "#8C1932",
+ "theme_color": "#9BEFE0",
  "default_locale": "en",
  "description": "A plain text description",
   "icons": [

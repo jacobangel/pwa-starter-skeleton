@@ -4,10 +4,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-function templateContent() {
 
-}
 var plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -17,6 +16,7 @@ var plugins = [
     chunks: ['app'],
     template: 'index.html', // eslint-disable-line no-use-before-define
   }),
+  new ExtractTextPlugin("[name].css")
 ];
 var reactExternal = {
   root: 'React',
@@ -34,11 +34,10 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-      { test: /\.css?$/, loaders: [
-        'style',
-        'css',
-        'postcss'
-      ]},
+      { test: /\.css?$/, loader: ExtractTextPlugin.extract(
+        'style-loader',
+        'css-loader!postcss-loader'
+      )},
       { test: /\.less?$/, exclude: /node_modules/, loaders: [
         'style',
         'css',

@@ -1,6 +1,14 @@
 {
  "name": "App",
- "icons": [
+ "version": "0.0.1",
+ "manifest_version": 2,
+ "start_url": "/index.html",
+ "display": "standalone",
+ "background_color": "#4F4F4F",
+ "theme_color": "#2F3BA2",
+ "default_locale": "en",
+ "description": "A plain text description",
+  "icons": [
   {
    "src": "\/images\/icons\/android-icon-36x36.png",
    "sizes": "36x36",
